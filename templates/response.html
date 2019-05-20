@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Twitter Sentiment</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <!-- Bootstrap Core CSS -->
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+	<!-- Material Design Bootstrap -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.14/css/mdb.min.css" rel="stylesheet">
+	<!-- font-awesome icons -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- //Custom Theme files -->
+</head>
+
+<body>
+<div class="alert alert-primary"  role="alert" style="text-align:center;">
+    <p><b>Your Requested Query Is {{ w }}</b></p>
+    <p><b>Your Sentiment Results Are Shown Below</b></p>
+</div>
+    <!-- js-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- js-->
+	<!-- MDB core JavaScript -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.14/js/mdb.min.js"></script>
+	<!-- Bootstrap Core JavaScript -->
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js">
+	</script>
+	<!-- //Bootstrap Core JavaScript -->
+
+    <h1>Number of Positive tweets is {{ r }}</h1>
+    <h1>Number of Negative tweets is {{ s }}</h1>
+    <h1>Number of Nuetral tweets is {{ t }}</h1>
+
+</body>
+
+<head>
+  <title>JavaScript Pie Chart</title>
+  <script src="https://cdn.anychart.com/js/8.0.1/anychart-core.min.js"></script>
+  <script src="https://cdn.anychart.com/js/8.0.1/anychart-pie.min.js"></script>
+</head>
+<body>
+<div id="container" style="width: 100%; height: 500px"></div>
+<script>
+    <!-- chart code will be here -->
+    anychart.onDocumentReady(function() {
+        var data=[
+            {x:"Positive",value:{{r}}},
+            {x:"Negative",value:{{s}}},
+            {x:"Nuetral",value:{{t}}}
+        ]
+          // create the chart
+      var chart = anychart.pie();
+
+      // set the chart title
+      chart.title("Sentiment of the Tweets");
+
+      // add the data
+      chart.data(data);
+
+      // display the chart in the container
+      chart.container('container');
+      chart.draw();
+
+    })
+</script>
+</body>
+<head>
+	<title>Twitter Sentiment</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <!-- Bootstrap Core CSS -->
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+	<!-- Material Design Bootstrap -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.14/css/mdb.min.css" rel="stylesheet">
+	<!-- font-awesome icons -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- //Custom Theme files -->
+</head>
+
+<body>
+<div class="alert alert-primary"  role="alert" style="text-align:center;">
+    <pre><b>Top Positive Tweets</b></pre>
+    <pre><b>{{ u }}</b></pre>
+    <pre><b>Top Negative Tweets</b></pre>
+    <pre><b>{{ v }}</b></pre>
+
+</div>
+</body>
+
+</html>
+
+
